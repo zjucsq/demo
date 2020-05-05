@@ -5,8 +5,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p>
-    hello, world!
-</p>
+<form th:action="@{/index}" th:object="${book}" method="post">
+    图书编号：<br>
+    <input type="text" th:field="*{id}" name="图书编号"/>
+    <br>图书名称：<br>
+    <input type="text" th:field="*{name}" name="图书名称"/>
+    <br>图书作者：<br>
+    <input type="text" th:field="*{author}" name="图书作者"/>
+    <br>
+    <input type="submit" value="提交"/>
+</form>
+<table border="1">
+    <tr>
+        <td>图书编号</td>
+        <td>图书名称</td>
+        <td>图书作者</td>
+    </tr>
+    <tr th:each="book:${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.author}"></td>
+    </tr>
+</table>
 </body>
 </html>
