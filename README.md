@@ -1,5 +1,8 @@
 ## 码匠社区
 
+## question
+- IOC: Compoment
+
 ## 快速运行
 1. 安装必备工具  
 JDK，Maven
