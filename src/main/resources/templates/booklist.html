@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<form th:action="@{/bookupload}" th:object="${book}" method="post">
+<form th:action="@{/result}" th:object="${book}" method="post">
     图书编号：<br>
     <input type="text" th:field="*{id}" name="图书编号"/>
     <br>图书名称：<br>
@@ -13,7 +13,8 @@
     <br>图书作者：<br>
     <input type="text" th:field="*{author}" name="图书作者"/>
     <br>
-    <input type="submit" value="提交"/>
+    <input type="submit" value="添加" name="action"/>
+    <input type="submit" value="删除" name="action"/>
 </form>
 <table border="1">
     <tr>
@@ -27,5 +28,11 @@
         <td th:text="${book.author}"></td>
     </tr>
 </table>
+<div th:if="${newBook}!=null">
+    <p th:text="${newBook.id}"></p>
+    <p th:text="${newBook.name}"></p>
+    <p th:text="${newBook.author}"></p>
+</div>
+<a href="../">return</a>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>图书编号</td>
+        <td>图书名称</td>
+        <td>图书作者</td>
+    </tr>
+    <tr th:each="book:${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.author}"></td>
+    </tr>
+</table>
+<div th:if="${newBook}!=null">
+    <p th:text="${newBook.id}"></p>
+    <p th:text="${newBook.name}"></p>
+    <p th:text="${newBook.author}"></p>
+</div>
+<p>I'm result.html</p>
+<a href="../">return index</a>
+<a href="../booklist">return booklist</a>
+</body>
+</html>
